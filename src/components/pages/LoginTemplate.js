@@ -7,39 +7,29 @@ import 'firebase/auth';
 function Login() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
   const [mensagem, setMensagem] = useState('');
 
   function LoginUsuario() {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, senha)
-      .then(function (firebaseUser) {
-        setLoggedIn(true);
+      .then(() => {
         setMensagem('Login bem-sucedido');
-        // sucesso
-        window.location.href = '/home'; 
+        window.location.href = '/home';
       })
-      .catch(function (error) {
+      .catch((error) => {
         setMensagem(`Erro ao fazer login: ${error.message}`);
-        // erro
       });
   }
 
-  function alterarEmail(event) {
-    setEmail(event.target.value);
-  }
-
-  function alterarSenha(event) {
-    setSenha(event.target.value);
+  function handleSubmit(event) {
+    event.preventDefault(); // Evita o recarregamento da página
+    LoginUsuario();
   }
 
   useEffect(() => {
     if (mensagem) {
-      const timeout = setTimeout(() => {
-        setMensagem('');
-      }, 2500);
-
+      const timeout = setTimeout(() => setMensagem(''), 2500);
       return () => clearTimeout(timeout);
     }
   }, [mensagem]);
@@ -58,7 +48,7 @@ function Login() {
         </div>
         
         <div className="card-body px-4 py-4">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label htmlFor="email" className="form-label">Email</label>
               <div className="input-group">
@@ -66,11 +56,12 @@ function Login() {
                   <i className="bi bi-envelope"></i>
                 </span>
                 <input 
-                  onChange={alterarEmail} 
+                  onChange={(e) => setEmail(e.target.value)} 
                   type="email" 
                   className="form-control" 
                   id="email" 
                   placeholder="seu@email.com"
+                  required
                 />
               </div>
             </div>
@@ -82,11 +73,12 @@ function Login() {
                   <i className="bi bi-lock"></i>
                 </span>
                 <input 
-                  onChange={alterarSenha} 
+                  onChange={(e) => setSenha(e.target.value)} 
                   type="password" 
                   className="form-control" 
                   id="senha" 
                   placeholder="••••••••"
+                  required
                 />
               </div>
               <div className="form-text mt-2">Nunca compartilhe sua senha com terceiros.</div>
@@ -94,14 +86,13 @@ function Login() {
 
             <div className="d-grid gap-2 mt-4">
               <button 
-                type="button" 
-                className="btn btn-primary py-2" 
-                onClick={LoginUsuario}
+                type="submit" 
+                className="btn btn-primary py-2"
               >
                 Entrar
               </button>
             </div>
-            
+
             {mensagem && (
               <div className="alert alert-info mt-3" role="alert">
                 {mensagem}
