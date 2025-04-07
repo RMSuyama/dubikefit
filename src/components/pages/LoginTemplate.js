@@ -111,7 +111,7 @@ function Login() {
         </div>
         
         <div className="card-footer bg-white border-0 text-center pb-4">
-          <small className="text-muted">© 2025 BikeMetrics. Todos os direitos reservados.</small>
+          <small className="text-muted">© 2025 Half-Blood. Todos os direitos reservados.</small>
         </div>
       </div>
     </div>
