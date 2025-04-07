@@ -1,0 +1,27 @@
+.SPRT{
+  font-size: large;
+  font-weight: bold;
+  align-self: center;
+  margin-top: 1vw;
+    
+}
+
+.cardLog {
+    width: 50vw;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  
+  .cardLog-header {
+    background-color: #f8f9fa;
+    border-bottom: none;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 1vw;
+  }
+  

@@ -1,0 +1,14 @@
+.container {
+    margin-top: 2vw;
+    font-family: 'Spectral', serif;
+    text-align: justify;
+
+  }
+  
+  h2, th, td {
+    font-family: inherit;
+  }
+
+  #pesquisas{
+    margin-top: 2vw;
+  }

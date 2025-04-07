@@ -1,0 +1,39 @@
+/* Navbar.css */
+
+.custom-navbar {
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+}
+
+.navbar-logo {
+  height: 60px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.navbar-nav .nav-link {
+  color: #333;
+  margin-right: 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.btn-outline-danger {
+  border-radius: 20px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+  border-color: #dc3545;
+}
