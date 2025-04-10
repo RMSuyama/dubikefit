@@ -4,8 +4,8 @@ import firebase from "../../config/firebase";
 import "firebase/auth";
 
 import Home from "../pages/Home";
-import Edital from "../pages/Edital";
-import Rotina from "../pages/Teses";
+import GerenciamentoAtletas from "../pages/GerenciamentoAtletas.js";
+import BikeFit from "../pages/BikeFit.js";
 import Resumos from "../pages/Resumos";
 import Login from "../pages/LoginTemplate";
 
@@ -47,12 +47,12 @@ const Rotas = () => {
           element={<ProtectedRoute element={Home} />}
         />
         <Route
-          path="/edital"
-          element={<ProtectedRoute element={Edital} />}
+          path="/geratletas"
+          element={<ProtectedRoute element={GerenciamentoAtletas} />}
         />
         <Route
-          path="/rotina"
-          element={<ProtectedRoute element={Rotina} />}
+          path="/bikefit"
+          element={<ProtectedRoute element={BikeFit} />}
         />
         <Route
           path="/resumos"

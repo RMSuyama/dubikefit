@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import Logo from '../../static/img/logo.png';
+import GerenciamentoAtletas from '../pages/GerenciamentoAtletas';
 
 const Navbar = () => {
   function handleLogout() {
@@ -35,7 +36,7 @@ const Navbar = () => {
                 Gerenciar Atletas
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdownAtletas">
-                <li><Link className="dropdown-item" to="/atletas/cadastrar">Cadastrar Atleta</Link></li>
+                <li><Link className="dropdown-item" href='geratletas'>Cadastrar Atleta</Link></li>
                 <li><Link className="dropdown-item" to="/atletas/listar">Listar Atletas</Link></li>
                 <li><hr className="dropdown-divider" /></li>
               </ul>
@@ -46,7 +47,7 @@ const Navbar = () => {
                 Bike Fit
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdownBikeFit">
-                <li><Link className="dropdown-item" to="/bikefit/speed">Speed</Link></li>
+                <li><Link className="dropdown-item" href='/bikefit'></Link></li>
                 <li><Link className="dropdown-item" to="/bikefit/mtb">Mountain Bike</Link></li>
                 <li><Link className="dropdown-item" to="/bikefit/triatlo">Triatlo</Link></li>
               </ul>
